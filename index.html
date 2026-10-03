@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gana con tu Rifa Vene York</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230033a0' stroke='%23d4a017' stroke-width='6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070707;--panel:#111;--panel2:#161616;--line:#2a2410;--gold:#d4a017;--gold2:#f6e27a;--gold3:#8a6a10;--txt:#f2efe6;--mut:#9a9588;--ok:#3ecf7a;--bad:#ff5a5a;
+--gg:linear-gradient(135deg,#f6e27a 0%,#d4a017 50%,#8a6a10 100%)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:Inter,system-ui,sans-serif;line-height:1.5;overflow-x:hidden;
+background-image:radial-gradient(circle at 80% -10%,rgba(212,160,23,.12),transparent 40%),linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:auto,48px 48px,48px 48px}
+h1,h2,h3,.disp{font-family:Anton,Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;font-weight:400}
+.gold{background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mono{font-family:'JetBrains Mono',monospace}
+button{font:inherit;cursor:pointer;color:inherit}
+input,select,textarea{font:inherit;color:var(--txt);background:#0c0c0c;border:1px solid #333;border-radius:8px;padding:10px 12px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+label{display:block;font-size:12px;color:var(--mut);margin:12px 0 4px;text-transform:uppercase;letter-spacing:.06em}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:40;background:rgba(7,7,7,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hrow{display:flex;align-items:center;gap:14px;height:64px}
+.logo{display:flex;align-items:center;gap:8px;font-family:Anton;font-size:16px;line-height:1.05;text-transform:uppercase}
+.logo .lg{width:44px;height:44px;flex:none}.flogo .lg{width:90px;height:90px;margin-bottom:8px}
+nav{display:flex;gap:18px;margin-left:auto;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+nav a{color:var(--mut);text-decoration:none}nav a:hover{color:var(--gold2)}
+.btn{border:1px solid var(--gold);background:transparent;color:var(--gold2);padding:9px 16px;border-radius:6px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.btn:hover{background:rgba(212,160,23,.12)}
+.btn.fill{background:var(--gg);color:#000;border-color:transparent}
+.btn.fill:hover{filter:brightness(1.1);background:var(--gg)}
+.btn.sm{padding:6px 10px;font-size:11px}
+.btn.bad{border-color:var(--bad);color:var(--bad)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+@media(max-width:760px){nav{display:none}.hrow{justify-content:space-between}}
+.tabsr{display:flex;gap:8px;flex-wrap:wrap;padding:18px 0 0}
+.tabsr button{background:#101010;border:1px solid #2c2c2c;border-radius:20px;padding:6px 14px;font-size:13px;color:var(--mut)}
+.tabsr button.on{border-color:var(--gold);color:var(--gold2)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;padding:34px 0 24px;align-items:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+.pill{display:inline-block;border:1px solid var(--gold3);color:var(--gold);font-size:11px;padding:3px 10px;border-radius:20px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-size:clamp(40px,8vw,72px);line-height:1}
+.hero p.desc{color:#c9c4b4;margin:14px 0;max-width:520px;white-space:pre-line}
+.price{font-family:Anton;font-size:44px;line-height:1}.price small{font-family:Inter;font-size:13px;color:var(--mut);margin-left:6px}
+.cd{display:flex;gap:10px;margin:18px 0}
+.cd div{background:#0e0e0e;border:1px solid var(--line);border-radius:8px;min-width:68px;padding:8px 6px;text-align:center}
+.cd b{display:block;font-family:'JetBrains Mono';font-size:28px;color:var(--gold2)}
+.cd span{font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
+.prog{height:8px;background:#1a1a1a;border-radius:8px;overflow:hidden;margin-top:6px}
+.prog i{display:block;height:100%;background:var(--gg);transition:width .5s}
+.progt{display:flex;justify-content:space-between;font-size:12px;color:var(--mut);margin-top:6px}
+.cta{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.gal .main{aspect-ratio:4/5;border:1px solid var(--gold3);border-radius:12px;overflow:hidden;background:linear-gradient(160deg,#1a1505,#0a0a0a);display:grid;place-items:center;box-shadow:0 0 50px rgba(212,160,23,.15)}
+.gal .main img{width:100%;height:100%;object-fit:cover}
+.gal .ph{font-family:Anton;font-size:70px;color:var(--gold3)}
+.thumbs{display:flex;gap:8px;margin-top:8px;overflow:auto}
+.thumbs img{width:56px;height:56px;object-fit:cover;border-radius:6px;border:1px solid #333;cursor:pointer}
+.thumbs img.on{border-color:var(--gold)}
+section{padding:56px 0}
+.sh{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.sh .n{font-family:Anton;font-size:56px;color:#1d1a0c}
+.sh h2{font-size:clamp(30px,5vw,44px)}
+.sub{color:var(--mut);margin-bottom:24px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:760px){.grid4{grid-template-columns:1fr 1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card .ic{font-size:22px;margin-bottom:8px}
+.card h3{font-size:15px;color:var(--gold2);margin-bottom:4px;letter-spacing:.04em}
+.card p{font-size:13px;color:var(--mut)}
+/* grid de numeros */
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
+.tools input{width:150px}.tools select{width:auto}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--mut);flex-wrap:wrap}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.nums{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:6px;max-height:520px;overflow:auto;padding:4px;border:1px solid var(--line);border-radius:10px;background:#0a0a0a}
+.nums button{font-family:'JetBrains Mono';font-weight:700;font-size:13px;padding:9px 0;border-radius:6px;border:1px solid #2e2e2e;background:#141414;color:var(--txt)}
+.nums button:hover:not(:disabled){border-color:var(--gold)}
+.nums button.sel{background:var(--gg);color:#000;border-color:transparent}
+.nums button.pend{background:#2a2208;color:#a98a2a;border-color:#3b3010}
+.nums button.sold{background:#1a0d0d;color:#6a3a3a;border-color:#2a1515;text-decoration:line-through}
+.nums button:disabled{cursor:not-allowed}
+.bar{position:sticky;bottom:0;z-index:30;background:rgba(12,10,3,.96);border-top:1px solid var(--gold3);padding:12px 16px;display:none}
+.bar.on{display:block}
+.bar .in{max-width:1100px;margin:0 auto;display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.chips{display:flex;gap:4px;flex-wrap:wrap;max-width:560px;max-height:56px;overflow:auto}
+.chip{font-family:'JetBrains Mono';font-size:12px;background:var(--gg);color:#000;padding:2px 7px;border-radius:4px;font-weight:700}
+.prizes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.prizes{grid-template-columns:1fr}}
+.prize{display:flex;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
+.prize .l{font-family:Anton;font-size:22px;color:#000;background:var(--gg);width:36px;height:36px;border-radius:6px;display:grid;place-items:center;flex:none}
+.prize h3{font-size:15px;color:var(--gold2);margin-bottom:2px}.prize p{font-size:13px;color:var(--mut);white-space:pre-line}
+.winners{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.win{background:var(--panel);border:1px solid var(--gold3);border-radius:10px;overflow:hidden}
+.win .im{height:140px;background:linear-gradient(160deg,#1f1805,#0a0a0a);display:grid;place-items:center}
+.win .im img{width:100%;height:100%;object-fit:cover}
+.win .b{padding:14px}.win .big{font-family:'JetBrains Mono';font-size:34px;font-weight:700}
+.empty{color:var(--mut);padding:30px;text-align:center;border:1px dashed #333;border-radius:10px}
+footer{border-top:1px solid var(--line);padding:30px 0 90px;text-align:center;color:var(--mut);font-size:13px}
+footer b{color:var(--gold2)}
+/* modal */
+#modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.82);display:none;align-items:flex-start;justify-content:center;padding:20px 12px;overflow:auto}
+#modal.on{display:flex}
+.mbox{background:#0f0e0a;border:1px solid var(--gold3);border-radius:14px;width:100%;max-width:520px;padding:22px;position:relative;margin:auto}
+.mbox.wide{max-width:900px}
+.mx{position:absolute;right:12px;top:10px;background:none;border:none;font-size:26px;color:var(--mut)}
+.mbox h2{font-size:28px;margin-bottom:6px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.row2{grid-template-columns:1fr}}
+.pay{background:#15120a;border:1px solid var(--gold3);border-radius:10px;padding:12px;margin-top:8px;font-size:14px;white-space:pre-line}
+.note{font-size:12px;color:var(--mut);margin-top:6px}
+.ok{color:var(--ok)}.bad{color:var(--bad)}
+.atabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0;border-bottom:1px solid var(--line);padding-bottom:10px}
+.atabs button{background:#141414;border:1px solid #2c2c2c;padding:7px 12px;border-radius:6px;font-size:13px;color:var(--mut)}
+.atabs button.on{border-color:var(--gold);color:var(--gold2)}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th,.tbl td{text-align:left;padding:8px 6px;border-bottom:1px solid #222;vertical-align:top}
+.tbl th{color:var(--mut);font-size:11px;text-transform:uppercase}
+.thm{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.thm div{position:relative}.thm img{width:70px;height:70px;object-fit:cover;border-radius:6px;border:1px solid #333}
+.thm button{position:absolute;top:-6px;right:-6px;background:var(--bad);border:none;color:#fff;border-radius:50%;width:20px;height:20px;font-size:12px;line-height:1}
+.badge{font-size:11px;padding:2px 8px;border-radius:10px;border:1px solid}
+.badge.v{color:var(--ok);border-color:var(--ok)}.badge.p{color:var(--gold);border-color:var(--gold)}
+.wheelbox{position:relative;width:min(340px,80vw);margin:16px auto}
+.wheelbox canvas{width:100%;display:block;transition:transform 6s cubic-bezier(.12,.62,.08,1)}
+.ptr{position:absolute;left:50%;top:-10px;transform:translateX(-50%);width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:24px solid var(--gold2);z-index:2;filter:drop-shadow(0 2px 4px #000)}
+.rollnum{text-align:center;font-family:'JetBrains Mono';font-weight:700;font-size:52px}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#1b1708;border:1px solid var(--gold);padding:10px 18px;border-radius:8px;z-index:200;display:none;font-size:14px}
+</style>
+</head>
+<body>
+<header><div class="wrap hrow">
+  <a class="logo" href="#inicio" style="color:inherit;text-decoration:none"><svg class="lg" viewBox="0 0 100 100" aria-label="Logo Vene York"><defs><clipPath id="cc"><circle cx="50" cy="50" r="46"/></clipPath></defs>
+<g clip-path="url(#cc)"><rect width="100" height="34" y="4" fill="#fcd116"/><rect width="100" height="33" y="37" fill="#0033a0"/><rect width="100" height="40" y="66" fill="#cf142b"/>
+<g fill="#fff"><circle cx="24" cy="52" r="2"/><circle cx="32" cy="45" r="2"/><circle cx="41" cy="41" r="2"/><circle cx="50" cy="40" r="2"/><circle cx="59" cy="41" r="2"/><circle cx="68" cy="45" r="2"/><circle cx="76" cy="52" r="2"/><circle cx="50" cy="48" r="0"/></g>
+<path fill="#0a0a0a" d="M0 100V78h8V68h7V76h6V62h8V74h5V58h6V70h5V44h3V30h2V44h3V66h6V54h8V68h6V60h7V74h6V64h8V78h6V100z"/></g>
+<circle cx="50" cy="50" r="46" fill="none" stroke="url(#gg2)" stroke-width="4"/><defs><linearGradient id="gg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e27a"/><stop offset=".5" stop-color="#d4a017"/><stop offset="1" stop-color="#8a6a10"/></linearGradient></defs></svg><span class="gold">Gana con tu<br>Rifa Vene York</span></a>
+  <nav><a href="#inicio">Inicio</a><a href="#como">Cómo participar</a><a href="#numeros">Números</a><a href="#premios">Premios</a><a href="#ganadores">Ganadores</a></nav>
+  <div style="display:flex;gap:8px"><button class="btn sm" onclick="openVerify()">Verificar</button><button class="btn fill sm" onclick="openAdmin()">Admin</button></div>
+</div></header>
+
+<main id="app"></main>
+
+<footer><div class="wrap">
+  <div class="flogo"><svg class="lg" viewBox="0 0 100 100" aria-label="Logo Vene York"><defs><clipPath id="cc2"><circle cx="50" cy="50" r="46"/></clipPath></defs>
+<g clip-path="url(#cc2)"><rect width="100" height="34" y="4" fill="#fcd116"/><rect width="100" height="33" y="37" fill="#0033a0"/><rect width="100" height="40" y="66" fill="#cf142b"/>
+<g fill="#fff"><circle cx="24" cy="52" r="2"/><circle cx="32" cy="45" r="2"/><circle cx="41" cy="41" r="2"/><circle cx="50" cy="40" r="2"/><circle cx="59" cy="41" r="2"/><circle cx="68" cy="45" r="2"/><circle cx="76" cy="52" r="2"/><circle cx="50" cy="48" r="0"/></g>
+<path fill="#0a0a0a" d="M0 100V78h8V68h7V76h6V62h8V74h5V58h6V70h5V44h3V30h2V44h3V66h6V54h8V68h6V60h7V74h6V64h8V78h6V100z"/></g>
+<circle cx="50" cy="50" r="46" fill="none" stroke="url(#gg3)" stroke-width="4"/><defs><linearGradient id="gg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e27a"/><stop offset=".5" stop-color="#d4a017"/><stop offset="1" stop-color="#8a6a10"/></linearGradient></defs></svg></div><p class="gold disp" style="font-size:22px;margin-bottom:8px">Gana con tu Rifa Vene York</p>
+  <p id="contactLine"></p>
+  <p style="margin-top:10px">© <span id="yr"></span> <b>Gana con tu Rifa Vene York</b>. Todos los derechos reservados a Gana con tu Rifa Vene York. Queda prohibida la reproducción total o parcial del contenido, diseño, nombre, logo y marca sin autorización por escrito.</p>
+</div></footer>
+
+<div class="bar" id="bar"><div class="in">
+  <div><div style="font-size:12px;color:var(--mut)"><span id="barCount"></span> número(s) · <b id="barTotal" class="gold" style="font-size:18px"></b></div><div class="chips" id="barChips"></div></div>
+  <div style="display:flex;gap:8px"><button class="btn sm" onclick="clearSel()">Limpiar</button><button class="btn fill" onclick="openBuy()">Pagar y reservar</button></div>
+</div></div>
+<div id="modal"></div>
+<div id="toast"></div>
+
+<script>
+const KEY='gctr_veneyork_v2';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Math.random().toString(36).slice(2,10);
+const $=s=>document.querySelector(s);
+
+/* ---------- datos ---------- */
+function seed(){
+  return {
+    adminPass:'2020',
+    contact:'4704399295',
+    payments:[{id:uid(),name:'Zelle',details:'Zelle: 6467398697\nTitular: Williams Pereira'}],
+    raffles:[{id:uid(),title:'Rifa de ejemplo',desc:'Esta es una rifa de ejemplo. Entra como Admin para crear tu primera rifa real, ponerle imágenes, precio y fecha de cierre.',
+      price:25,total:1000,endAt:Date.now()+7*864e5,images:[],orders:[],status:'active',winner:null,created:Date.now()}]
+  };
+}
+let db=(()=>{try{const d=JSON.parse(localStorage.getItem(KEY));if(d&&d.raffles)return d}catch(e){}return seed()})();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db));return true}catch(e){toast('Almacenamiento lleno: usa imágenes más pequeñas o borra rifas viejas');return false}}
+let cur=null, sel=new Set(), filter='all', isAdmin=false, imgIdx=0;
+
+/* ---------- utilidades ---------- */
+const money=n=>'$'+Number(n).toLocaleString('en-US',{minimumFractionDigits:Number.isInteger(+n)?0:2,maximumFractionDigits:2});
+const pad=(r,n)=>String(n).padStart(Math.max(2,String(r.total-1).length),'0');
+const soldMap=r=>{const m={};r.orders.forEach(o=>o.nums.forEach(n=>m[n]=o));return m};
+const soldCount=r=>r.orders.reduce((a,o)=>a+o.nums.length,0);
+const isOpen=r=>r.status==='active'&&r.endAt>Date.now();
+function toast(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',3200)}
+function fileToDataURL(file,max,q){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>{const img=new Image();img.onload=()=>{let w=img.width,h=img.height;const s=Math.min(1,max/Math.max(w,h));w=Math.round(w*s);h=Math.round(h*s);const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(img,0,0,w,h);res(c.toDataURL('image/jpeg',q))};img.onerror=()=>rej(new Error('img'));img.src=r.result};r.onerror=rej;r.readAsDataURL(file)})}
+function openModal(html,wide){const m=$('#modal');m.innerHTML=`<div class="mbox ${wide?'wide':''}"><button class="mx" onclick="closeModal()">×</button>${html}</div>`;m.classList.add('on')}
+function closeModal(){$('#modal').classList.remove('on');$('#modal').innerHTML=''}
+$('#modal').addEventListener('mousedown',e=>{if(e.target.id==='modal')closeModal()});
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ---------- vista pública ---------- */
+function render(){
+  $('#contactLine').innerHTML=`Contacto: <b>${esc(db.contact)}</b>`;
+  const act=db.raffles.filter(r=>r.status==='active');
+  if(!cur||!db.raffles.find(r=>r.id===cur)) cur=(act[0]||db.raffles[0]||{}).id;
+  const r=db.raffles.find(x=>x.id===cur);
+  const ended=db.raffles.filter(x=>x.status==='ended'&&x.winner);
+  let h='';
+  if(!r){h=`<div class="wrap"><div class="empty" style="margin:60px 0">Aún no hay rifas. El administrador puede crear la primera.</div></div>`}
+  else{
+    const sold=soldCount(r),pct=Math.round(sold/r.total*100),open=isOpen(r);
+    const imgs=r.images;if(imgIdx>=imgs.length)imgIdx=0;
+    h+=`<div class="wrap" id="inicio">
+    ${db.raffles.length>1?`<div class="tabsr">${db.raffles.map(x=>`<button class="${x.id===cur?'on':''}" onclick="pickRaffle('${x.id}')">${esc(x.title)}${x.status==='ended'?' · cerrada':''}</button>`).join('')}</div>`:''}
+    <div class="hero"><div>
+      <span class="pill">${open?'Rifa activa':(r.status==='ended'?'Rifa finalizada':'Ventas cerradas')} · hasta ${r.total.toLocaleString()} números</span>
+      <h1 class="gold">${esc(r.title)}</h1>
+      <p class="desc">${esc(r.desc)}</p>
+      <div class="price gold">${money(r.price)}<small>por número</small></div>
+      <div class="cd" id="cd"></div>
+      <div class="prog"><i style="width:${pct}%"></i></div>
+      <div class="progt"><span>${sold} vendidos</span><span>${sold} / ${r.total.toLocaleString()} números</span></div>
+      <div class="cta"><a class="btn fill" href="#numeros" style="text-decoration:none">Elegir mis números</a><a class="btn" href="#como" style="text-decoration:none">Cómo participar</a></div>
+    </div>
+    <div class="gal"><div class="main">${imgs.length?`<img src="${imgs[imgIdx]}" alt="">`:`<span class="ph">★</span>`}</div>
+      ${imgs.length>1?`<div class="thumbs">${imgs.map((s,i)=>`<img src="${s}" class="${i===imgIdx?'on':''}" onclick="imgIdx=${i};render()">`).join('')}</div>`:''}
+    </div></div></div>
+
+    <section id="como"><div class="wrap">
+      <div class="sh"><span class="n">01</span><h2 class="gold">Cómo participar</h2></div><p class="sub">Cuatro pasos y quedas participando. Sin vueltas.</p>
+      <div class="grid4">
+        <div class="card"><div class="ic">🎟️</div><h3>Elige tus números</h3><p>Entra al tablero y escoge los que quieras. Mientras más números, más chances.</p></div>
+        <div class="card"><div class="ic">💸</div><h3>Paga por Zelle</h3><p>Envía el monto exacto con los datos de pago que verás al reservar.</p></div>
+        <div class="card"><div class="ic">📎</div><h3>Sube tu comprobante</h3><p>Adjunta la captura del pago junto con tu nombre y teléfono.</p></div>
+        <div class="card"><div class="ic">🏆</div><h3>Recibe tu número</h3><p>Al subir el comprobante tus números quedan asignados a tu nombre. ¡Suerte!</p></div>
+      </div></div></section>
+
+    <section id="numeros" style="padding-top:20px"><div class="wrap">
+      <div class="sh"><span class="n">02</span><h2 class="gold">Elige tus números</h2></div>
+      <div class="legend"><span><i style="background:#141414;border:1px solid #333"></i>Disponible</span><span><i style="background:var(--gg)"></i>Tuyo (seleccionado)</span><span><i style="background:#2a2208"></i>Por verificar</span><span><i style="background:#1a0d0d"></i>Vendido</span></div>
+      <div class="tools">
+        <input id="srch" type="number" min="0" max="${r.total-1}" placeholder="Buscar número" oninput="drawNums()">
+        <select id="flt" onchange="filter=this.value;drawNums()"><option value="all">Todos</option><option value="free">Solo disponibles</option></select>
+        <button class="btn sm" onclick="lucky(1)">🍀 1 al azar</button><button class="btn sm" onclick="lucky(5)">🍀 5 al azar</button><button class="btn sm" onclick="lucky(10)">🍀 10 al azar</button>
+      </div>
+      ${open?'':`<p class="bad" style="margin-bottom:8px">Las ventas de esta rifa están cerradas.</p>`}
+      <div class="nums" id="nums"></div>
+    </div></section>
+
+    <section id="premios"><div class="wrap">
+      <div class="sh"><span class="n">03</span><h2 class="gold">Los premios</h2></div><p class="sub">Lo que juegas en esta rifa.</p>
+      <div class="prizes"><div class="prize"><div class="l">A</div><div><h3>${esc(r.title)}</h3><p>${esc(r.desc)}</p></div></div></div>
+    </div></section>`;
+  }
+  h+=`<section id="ganadores"><div class="wrap">
+    <div class="sh"><span class="n">04</span><h2 class="gold">Ganadores reales</h2></div><p class="sub">Cada rifa termina con ruleta y queda en el historial.</p>
+    ${ended.length?`<div class="winners">${ended.sort((a,b)=>b.winner.ts-a.winner.ts).map(x=>`<div class="win"><div class="im">${x.images[0]?`<img src="${x.images[0]}">`:'<span class="disp gold" style="font-size:40px">★</span>'}</div><div class="b"><div style="font-size:12px;color:var(--mut)">${esc(x.title)}</div><div class="big gold">#${pad(x,x.winner.num)}</div><div style="font-weight:600">${esc(x.winner.name)}</div><div style="font-size:12px;color:var(--mut)">${new Date(x.winner.ts).toLocaleDateString('es')}</div></div></div>`).join('')}</div>`:`<div class="empty">Todavía no hay ganadores. ¡El primero puedes ser tú!</div>`}
+  </div></section>`;
+  $('#app').innerHTML=h;
+  if(r){drawNums();tick()}
+  updBar();
+}
+function pickRaffle(id){cur=id;sel.clear();imgIdx=0;render()}
+function drawNums(){
+  const r=db.raffles.find(x=>x.id===cur);if(!r)return;
+  const m=soldMap(r),open=isOpen(r),q=$('#srch')?.value;
+  let h='';
+  for(let i=0;i<r.total;i++){
+    if(q!==''&&q!=null&&+q!==i)continue;
+    const o=m[i];if(filter==='free'&&o)continue;
+    let c='',d='';
+    if(o){c=o.status==='confirmado'?'sold':'pend';d='disabled'}else if(!open)d='disabled';
+    if(sel.has(i))c='sel';
+    h+=`<button class="${c}" ${d} onclick="toggleNum(${i})">${pad(r,i)}</button>`;
+  }
+  $('#nums').innerHTML=h||'<div class="empty" style="grid-column:1/-1">Sin resultados</div>';
+}
+function toggleNum(i){sel.has(i)?sel.delete(i):sel.add(i);drawNums();updBar()}
+function clearSel(){sel.clear();drawNums();updBar()}
+function lucky(n){
+  const r=db.raffles.find(x=>x.id===cur);if(!isOpen(r))return;
+  const m=soldMap(r),free=[];for(let i=0;i<r.total;i++)if(!m[i]&&!sel.has(i))free.push(i);
+  if(!free.length)return toast('No quedan números disponibles');
+  for(let k=0;k<n&&free.length;k++){const j=crypto.getRandomValues(new Uint32Array(1))[0]%free.length;sel.add(free.splice(j,1)[0])}
+  drawNums();updBar()
+}
+function updBar(){
+  const r=db.raffles.find(x=>x.id===cur);const b=$('#bar');
+  if(!r||!sel.size){b.classList.remove('on');return}
+  b.classList.add('on');
+  $('#barCount').textContent=sel.size;$('#barTotal').textContent=money(sel.size*r.price);
+  $('#barChips').innerHTML=[...sel].sort((a,b)=>a-b).map(n=>`<span class="chip">${pad(r,n)}</span>`).join('');
+}
+function tick(){
+  const r=db.raffles.find(x=>x.id===cur),e=$('#cd');if(!r||!e)return;
+  let d=Math.max(0,r.endAt-Date.now());
+  if(r.status==='ended'||d===0){e.innerHTML='<div style="min-width:0;padding:8px 16px"><b style="font-size:18px">Rifa cerrada</b></div>';return}
+  const v=[Math.floor(d/864e5),Math.floor(d/36e5)%24,Math.floor(d/6e4)%60,Math.floor(d/1e3)%60];
+  e.innerHTML=['días','horas','min','seg'].map((l,i)=>`<div><b>${String(v[i]).padStart(2,'0')}</b><span>${l}</span></div>`).join('');
+}
+setInterval(tick,1000);
+
+/* ---------- compra ---------- */
+function openBuy(){
+  const r=db.raffles.find(x=>x.id===cur);
+  if(!isOpen(r))return toast('Las ventas están cerradas');
+  if(!sel.size)return;
+  if(!db.payments.length)return toast('El admin aún no configuró métodos de pago');
+  const nums=[...sel].sort((a,b)=>a-b);
+  openModal(`<h2 class="gold">Reservar números</h2>
+  <div class="chips" style="max-height:80px">${nums.map(n=>`<span class="chip">${pad(r,n)}</span>`).join('')}</div>
+  <p style="margin-top:8px">Total a pagar: <b class="gold" style="font-size:24px">${money(nums.length*r.price)}</b></p>
+  <label>Método de pago</label>
+  <select id="bm" onchange="showPay()">${db.payments.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('')}</select>
+  <div class="pay" id="payd"></div>
+  <p class="note">Envía el monto exacto y luego sube la captura del pago.</p>
+  <div class="row2"><div><label>Tu nombre</label><input id="bn" maxlength="60"></div><div><label>Teléfono / WhatsApp</label><input id="bp" maxlength="25" inputmode="tel"></div></div>
+  <label>Referencia del pago (opcional)</label><input id="br" maxlength="40">
+  <label>Comprobante de pago (imagen)</label><input id="bf" type="file" accept="image/*">
+  <p class="note">Al subir el comprobante, tus números quedan asignados a tu nombre. El administrador lo confirma después; si el pago no aparece, los números se liberan.</p>
+  <button class="btn fill" id="bs" style="width:100%;margin-top:16px;padding:13px" onclick="submitBuy()">Enviar comprobante y recibir mis números</button>`);
+  showPay();
+}
+function showPay(){const p=db.payments.find(x=>x.id===$('#bm').value);$('#payd').innerHTML=p?`<b>${esc(p.name)}</b><br>${esc(p.details)}`:''}
+async function submitBuy(){
+  const r=db.raffles.find(x=>x.id===cur);
+  const name=$('#bn').value.trim(),phone=$('#bp').value.trim(),f=$('#bf').files[0];
+  if(!name||phone.length<7)return toast('Escribe tu nombre y un teléfono válido');
+  if(!f)return toast('Sube la captura del comprobante');
+  if(!isOpen(r))return toast('Las ventas se cerraron');
+  const m=soldMap(r),nums=[...sel].sort((a,b)=>a-b);
+  if(nums.some(n=>m[n])){toast('Alguno de tus números ya fue tomado, elige otros');closeModal();sel=new Set(nums.filter(n=>!m[n]));render();return}
+  $('#bs').disabled=true;$('#bs').textContent='Subiendo…';
+  let proof;try{proof=await fileToDataURL(f,900,.6)}catch(e){$('#bs').disabled=false;$('#bs').textContent='Reintentar';return toast('No se pudo leer la imagen')}
+  const pm=db.payments.find(x=>x.id===$('#bm').value);
+  const order={id:uid(),name,phone,ref:$('#br').value.trim(),method:pm?pm.name:'',proof,nums,ts:Date.now(),status:'verificando',amount:nums.length*r.price};
+  r.orders.push(order);
+  if(!save()){r.orders.pop();$('#bs').disabled=false;$('#bs').textContent='Reintentar';return}
+  sel.clear();render();
+  openModal(`<h2 class="gold">¡Listo, ${esc(name)}!</h2><p>Tus números quedaron asignados:</p>
+  <div class="chips" style="max-height:140px;margin:10px 0">${nums.map(n=>`<span class="chip" style="font-size:18px;padding:4px 10px">${pad(r,n)}</span>`).join('')}</div>
+  <p class="note">${esc(r.title)} · ${money(order.amount)}. Estado: <b class="gold">por verificar</b>. Puedes consultar tus números en “Verificar” con tu teléfono. Guarda una captura de esta pantalla.</p>
+  <button class="btn fill" style="width:100%;margin-top:14px" onclick="closeModal()">Cerrar</button>`);
+}
+function openVerify(){
+  openModal(`<h2 class="gold">Verificar mis números</h2><label>Teléfono con el que compraste</label><input id="vp" inputmode="tel">
+  <button class="btn fill" style="width:100%;margin-top:12px" onclick="doVerify()">Buscar</button><div id="vr" style="margin-top:14px"></div>`)
+}
+function doVerify(){
+  const p=$('#vp').value.replace(/\D/g,'');if(p.length<7)return toast('Escribe tu teléfono completo');
+  let h='';db.raffles.forEach(r=>r.orders.filter(o=>o.phone.replace(/\D/g,'')===p).forEach(o=>{
+    h+=`<div class="card" style="margin-bottom:8px"><div style="font-size:12px;color:var(--mut)">${esc(r.title)} · ${new Date(o.ts).toLocaleString('es')}</div>
+    <div class="chips" style="max-height:none;margin:6px 0">${o.nums.map(n=>`<span class="chip">${pad(r,n)}</span>`).join('')}</div>
+    <span class="badge ${o.status==='confirmado'?'v':'p'}">${o.status==='confirmado'?'Pago confirmado':'Por verificar'}</span></div>`}));
+  $('#vr').innerHTML=h||'<div class="empty">No encontramos compras con ese teléfono.</div>';
+}
+
+/* ---------- admin ---------- */
+function openAdmin(){
+  if(isAdmin)return adminUI('orders');
+  openModal(`<h2 class="gold">Acceso admin</h2><label>Clave</label><input id="ap" type="password" onkeydown="if(event.key==='Enter')doLogin()">
+  <button class="btn fill" style="width:100%;margin-top:14px" onclick="doLogin()">Entrar</button>`);
+  setTimeout(()=>$('#ap')?.focus(),50);
+}
+function doLogin(){if($('#ap').value===db.adminPass){isAdmin=true;adminUI('orders')}else toast('Clave incorrecta')}
+let atab='orders',editId=null,formImgs=[],aRaffle=null;
+function adminUI(tab){
+  atab=tab;
+  if(!aRaffle||!db.raffles.find(r=>r.id===aRaffle))aRaffle=(db.raffles[0]||{}).id;
+  const tabs=[['orders','Pedidos'],['raffles','Rifas'],['form',editId?'Editar rifa':'Nueva rifa'],['pay','Métodos de pago'],['cfg','Ajustes']];
+  let body='';
+  if(tab==='orders'){
+    const r=db.raffles.find(x=>x.id===aRaffle);
+    body=`<select onchange="aRaffle=this.value;adminUI('orders')">${db.raffles.map(x=>`<option value="${x.id}" ${x.id===aRaffle?'selected':''}>${esc(x.title)}${x.status==='ended'?' (archivada)':''}</option>`).join('')}</select>`;
+    if(r){
+      const t=r.orders.reduce((a,o)=>a+o.amount,0);
+      body+=`<p class="note">${soldCount(r)} números · ${r.orders.length} pedidos · recaudado ${money(t)}</p>
+      ${r.orders.length?`<div style="overflow:auto"><table class="tbl"><tr><th>Cliente</th><th>Números</th><th>Pago</th><th></th></tr>
+      ${r.orders.slice().reverse().map(o=>`<tr><td><b>${esc(o.name)}</b><br>${esc(o.phone)}<br><span class="note">${new Date(o.ts).toLocaleString('es')}</span></td>
+      <td style="max-width:200px">${o.nums.sort((a,b)=>a-b).map(n=>pad(r,n)).join(', ')}</td>
+      <td>${money(o.amount)}<br>${esc(o.method)}${o.ref?'<br>Ref: '+esc(o.ref):''}<br><span class="badge ${o.status==='confirmado'?'v':'p'}">${o.status}</span></td>
+      <td style="white-space:nowrap"><button class="btn sm" onclick="viewProof('${r.id}','${o.id}')">Comprobante</button>
+      ${o.status!=='confirmado'?`<button class="btn sm fill" onclick="confirmOrder('${r.id}','${o.id}')">Confirmar</button>`:''}
+      ${r.status==='active'?`<button class="btn sm bad" onclick="rejectOrder('${r.id}','${o.id}')">Rechazar</button>`:''}</td></tr>`).join('')}</table></div>`:'<div class="empty" style="margin-top:10px">Sin pedidos todavía.</div>'}`;
+    }else body='<div class="empty">No hay rifas.</div>';
+  }
+  if(tab==='raffles'){
+    body=db.raffles.length?db.raffles.map(r=>`<div class="card" style="margin-bottom:10px"><b>${esc(r.title)}</b> <span class="badge ${r.status==='active'?'v':'p'}">${r.status==='active'?'activa':'archivada'}</span>
+    <div class="note">${soldCount(r)}/${r.total} vendidos · cierra ${new Date(r.endAt).toLocaleString('es')}${r.winner?` · Ganador #${pad(r,r.winner.num)} ${esc(r.winner.name)}`:''}</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+      <button class="btn sm" onclick="editRaffle('${r.id}')">Editar</button>
+      ${r.status==='active'?`<button class="btn sm fill" onclick="openWheel('${r.id}')">🎡 Ruleta</button>`:''}
+      <button class="btn sm bad" onclick="delRaffle('${r.id}')">Eliminar</button></div></div>`).join(''):'<div class="empty">No hay rifas.</div>';
+  }
+  if(tab==='form'){
+    const r=editId?db.raffles.find(x=>x.id===editId):null;
+    const dt=new Date((r?r.endAt:Date.now()+7*864e5)-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,16);
+    body=`<label>Nombre de la rifa</label><input id="fT" value="${esc(r?.title)}" maxlength="80">
+    <label>Descripción / premio</label><textarea id="fD" rows="4" maxlength="600">${esc(r?.desc)}</textarea>
+    <div class="row2"><div><label>Precio por número (USD)</label><input id="fP" type="number" min="0.5" step="0.5" value="${r?r.price:25}"></div>
+    <div><label>Cantidad de números (máx. 1000)</label><input id="fN" type="number" min="1" max="1000" value="${r?r.total:1000}"></div></div>
+    <label>Fecha y hora de cierre (cuenta regresiva)</label><input id="fE" type="datetime-local" value="${dt}">
+    <label>Imágenes</label><input id="fI" type="file" accept="image/*" multiple onchange="addImgs(this)">
+    <div class="thm" id="thm"></div>
+    <div style="display:flex;gap:8px;margin-top:16px"><button class="btn fill" onclick="saveRaffle()">${r?'Guardar cambios':'Crear rifa'}</button>${r?`<button class="btn" onclick="editId=null;adminUI('form')">Cancelar</button>`:''}</div>`;
+  }
+  if(tab==='pay'){
+    body=db.payments.map(p=>`<div class="card" style="margin-bottom:8px;display:flex;justify-content:space-between;gap:10px"><div><b>${esc(p.name)}</b><div class="note" style="white-space:pre-line">${esc(p.details)}</div></div><button class="btn sm bad" onclick="delPay('${p.id}')">Quitar</button></div>`).join('')
+    +`<h3 class="gold" style="margin-top:14px">Agregar método</h3><label>Nombre (ej. Pago móvil, Zelle, Cash App)</label><input id="pN"><label>Datos para pagar</label><textarea id="pD" rows="3"></textarea>
+    <button class="btn fill" style="margin-top:10px" onclick="addPay()">Agregar</button>`;
+  }
+  if(tab==='cfg'){
+    body=`<label>Teléfono de contacto (se muestra en el pie)</label><input id="cC" value="${esc(db.contact)}">
+    <label>Nueva clave de admin (déjala vacía para no cambiarla)</label><input id="cP" type="password" autocomplete="new-password">
+    <button class="btn fill" style="margin-top:12px" onclick="saveCfg()">Guardar</button>
+    <p class="note" style="margin-top:14px">Los datos se guardan en este navegador. Descarga un respaldo de vez en cuando.</p>
+    <div style="display:flex;gap:8px;margin-top:8px"><button class="btn sm" onclick="exportData()">Descargar respaldo</button><button class="btn sm" onclick="$('#imp').click()">Restaurar respaldo</button><input id="imp" type="file" accept=".json" style="display:none" onchange="importData(this)"></div>
+    <button class="btn sm bad" style="margin-top:18px" onclick="isAdmin=false;closeModal()">Cerrar sesión</button>`;
+  }
+  openModal(`<h2 class="gold">Panel admin</h2><div class="atabs">${tabs.map(([k,l])=>`<button class="${k===tab?'on':''}" onclick="${k==='form'&&tab!=='form'?'startNew()':`adminUI('${k}')`}">${l}</button>`).join('')}</div>${body}`,true);
+  if(tab==='form')drawThm();
+}
+function startNew(){editId=null;formImgs=[];adminUI('form')}
+function editRaffle(id){editId=id;formImgs=[...db.raffles.find(r=>r.id===id).images];adminUI('form')}
+function drawThm(){const e=$('#thm');if(e)e.innerHTML=formImgs.map((s,i)=>`<div><img src="${s}"><button onclick="formImgs.splice(${i},1);drawThm()">×</button></div>`).join('')}
+async function addImgs(inp){for(const f of inp.files){try{formImgs.push(await fileToDataURL(f,1000,.72))}catch(e){toast('Una imagen no se pudo leer')}}inp.value='';drawThm()}
+function saveRaffle(){
+  const title=$('#fT').value.trim(),desc=$('#fD').value.trim(),price=+$('#fP').value,total=Math.floor(+$('#fN').value),endAt=new Date($('#fE').value).getTime();
+  if(!title)return toast('Pon un nombre a la rifa');
+  if(!(price>0))return toast('Precio inválido');
+  if(!(total>=1&&total<=1000))return toast('La cantidad debe estar entre 1 y 1000');
+  if(!endAt)return toast('Elige fecha de cierre');
+  let r=editId&&db.raffles.find(x=>x.id===editId);
+  if(r){
+    const mx=Math.max(-1,...r.orders.flatMap(o=>o.nums));
+    if(total<=mx)return toast(`Ya se vendió el número ${mx}; la cantidad mínima es ${mx+1}`);
+    Object.assign(r,{title,desc,price,total,endAt,images:formImgs});
+  }else{
+    r={id:uid(),title,desc,price,total,endAt,images:formImgs,orders:[],status:'active',winner:null,created:Date.now()};
+    db.raffles.unshift(r);
+  }
+  if(!save())return;
+  cur=r.id;aRaffle=r.id;editId=null;formImgs=[];imgIdx=0;sel.clear();render();toast('Rifa guardada');adminUI('raffles');
+}
+function delRaffle(id){if(!confirm('¿Eliminar esta rifa y todo su historial?'))return;db.raffles=db.raffles.filter(r=>r.id!==id);save();render();adminUI('raffles')}
+function viewProof(rid,oid){
+  const r=db.raffles.find(x=>x.id===rid),o=r.orders.find(x=>x.id===oid);
+  openModal(`<h2 class="gold">${esc(o.name)}</h2><p class="note">${esc(o.phone)} · ${money(o.amount)} · ${esc(o.method)}</p><img src="${o.proof}" style="width:100%;border-radius:8px;margin:10px 0"><button class="btn" onclick="adminUI('orders')">← Volver</button>`);
+}
+function confirmOrder(rid,oid){const o=db.raffles.find(x=>x.id===rid).orders.find(x=>x.id===oid);o.status='confirmado';save();render();adminUI('orders')}
+function rejectOrder(rid,oid){if(!confirm('¿Rechazar y liberar estos números?'))return;const r=db.raffles.find(x=>x.id===rid);r.orders=r.orders.filter(x=>x.id!==oid);save();render();adminUI('orders')}
+function addPay(){const n=$('#pN').value.trim(),d=$('#pD').value.trim();if(!n||!d)return toast('Completa nombre y datos');db.payments.push({id:uid(),name:n,details:d});save();adminUI('pay')}
+function delPay(id){db.payments=db.payments.filter(p=>p.id!==id);save();adminUI('pay')}
+function saveCfg(){db.contact=$('#cC').value.trim();const p=$('#cP').value;if(p){if(p.length<4)return toast('La clave debe tener al menos 4 caracteres');db.adminPass=p}save();render();toast('Guardado')}
+function exportData(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(db)],{type:'application/json'}));a.download='respaldo-rifas.json';a.click()}
+function importData(i){const f=i.files[0];if(!f)return;f.text().then(t=>{try{const d=JSON.parse(t);if(!d.raffles)throw 0;db=d;save();render();adminUI('cfg');toast('Respaldo restaurado')}catch(e){toast('Archivo inválido')}})}
+
+/* ---------- ruleta ---------- */
+function openWheel(id){
+  const r=db.raffles.find(x=>x.id===id);
+  const paid=r.orders.flatMap(o=>o.nums.map(n=>({n,o})));
+  if(!paid.length)return toast('Aún no hay números vendidos');
+  openModal(`<h2 class="gold" style="text-align:center">Ruleta · ${esc(r.title)}</h2>
+  <p class="note" style="text-align:center">${paid.length} números participan</p>
+  <div class="wheelbox"><div class="ptr"></div><canvas id="wh" width="680" height="680"></canvas></div>
+  <div class="rollnum gold" id="roll">— — —</div><div id="wres" style="text-align:center;margin-top:8px"></div>
+  <div style="text-align:center;margin-top:14px"><button class="btn fill" id="spin">🎡 Girar ruleta</button></div>`);
+  const SEG=24,cv=$('#wh'),ctx=cv.getContext('2d'),a=2*Math.PI/SEG;
+  const win=paid[crypto.getRandomValues(new Uint32Array(1))[0]%paid.length];
+  const ti=Math.floor(Math.random()*SEG);
+  const labels=Array.from({length:SEG},(_,i)=>i===ti?win.n:paid[Math.floor(Math.random()*paid.length)].n);
+  for(let i=0;i<SEG;i++){
+    ctx.beginPath();ctx.moveTo(340,340);ctx.arc(340,340,330,-Math.PI/2+i*a,-Math.PI/2+(i+1)*a);ctx.closePath();
+    ctx.fillStyle=i%2?'#14110a':'#d4a017';ctx.fill();ctx.strokeStyle='#000';ctx.lineWidth=2;ctx.stroke();
+    ctx.save();ctx.translate(340,340);ctx.rotate(i*a+a/2);ctx.fillStyle=i%2?'#f6e27a':'#000';ctx.font='bold 26px JetBrains Mono, monospace';ctx.textAlign='center';ctx.fillText(pad(r,labels[i]),0,-250);ctx.restore();
+  }
+  ctx.beginPath();ctx.arc(340,340,46,0,7);ctx.fillStyle='#000';ctx.fill();ctx.strokeStyle='#d4a017';ctx.lineWidth=6;ctx.stroke();
+  $('#spin').onclick=()=>{
+    $('#spin').disabled=true;
+    const R=360*6-(ti+.5)*(360/SEG);
+    cv.style.transform=`rotate(${R}deg)`;
+    const iv=setInterval(()=>{$('#roll').textContent='#'+pad(r,paid[Math.floor(Math.random()*paid.length)].n)},70);
+    setTimeout(()=>{
+      clearInterval(iv);$('#roll').textContent='#'+pad(r,win.n);
+      $('#wres').innerHTML=`<div style="font-size:20px;font-weight:700">${esc(win.o.name)}</div><div class="note">${esc(win.o.phone)}</div>
+      <button class="btn fill" style="margin-top:12px" onclick="finishRaffle('${r.id}',${win.n},'${win.o.id}')">Guardar ganador y archivar rifa</button>`;
+    },6200);
+  };
+}
+function finishRaffle(rid,num,oid){
+  const r=db.raffles.find(x=>x.id===rid),o=r.orders.find(x=>x.id===oid);
+  r.winner={num,name:o.name,phone:o.phone,ts:Date.now()};r.status='ended';
+  o.status='confirmado';save();render();toast('Ganador guardado en el historial');adminUI('raffles');
+}
+render();
+</script>
+</body>
+</html>
